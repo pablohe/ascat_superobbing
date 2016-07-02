@@ -1,0 +1,11 @@
+
+Los datos de viento a 10m del ascat estan incluidos en el prepbufr, pero nosotros usamos los datos de otro lado porque el error es menor. Tenemos un script para bajarlos y modificar los datos. Asi que rusticamente lo que hicimos con el ascat fue borrar los datos con un fortran de los binarios que ya habiamos decodificado (a partir de los prepbufr), y luego pegamos los ascat que obtuvimos y decodificamos por medio del script de python. 
+
+Cuando hablamos de modificar los datos nos referimos a una tecnica "superobbing" que lo que hace es promediar algunos datos con el fin de reducir la correlación entre las observaciones. En vez de tomar muchos datos en un área chica, se promedian todos esos datos y te quedas con una sola observación. Eso es necesario para la tecnica de asimilación. Seria conveniente incluir algo asi en tu codigo para las observaciones satelitales y que pudiese ser opcionali, ademas de poder elegir la tecnica(Thinning o super obbing- Lo charlamos).   
+
+Los scripts los hizo Pablo Echevarria, y estan pensados en modulos de python tal que se pueden agregar otros satelites ademas del metop_a (de donde salen los ascat).
+
+Ademas el get.podaac.sh es el que va a buscar a la pagina web. 
+
+Los archivos que baja son netcdf. Cada uno pesa 2M y tienen horarios locos. Por ejemplo para un dia hay 14 files, o sea 28M.
+
