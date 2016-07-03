@@ -1,10 +1,10 @@
 import Satellite
 
-import subprocess
-import sys
+# import subprocess
+# import sys
 from datetime import datetime, timedelta
 import os
-import numpy as np
+# import numpy as np
 import re
 import glob
 
@@ -266,7 +266,7 @@ class Metop_a:
     
     """   
     import superObbing
-    import matplotlib.pyplot as plt
+    # import matplotlib.pyplot as plt
     
     print self.getName()+" "+str(dateANL)
 
@@ -290,16 +290,16 @@ class Metop_a:
 
     obs=model.domain(obs)
     obs=model.anlInterval(dateANL, obs)
-    
-    plt.scatter(obs[:,2],obs[:,1], color="green", s=0.2)
-    plt.savefig('sinSO.png', bbox_inches='tight',dpi=900)
-
-    obs=superObbing.superObbing(obs)
-
-    plt.scatter(obs[:,2],obs[:,1], color="blue",  s=0.4)
-    plt.savefig('conSO.png', bbox_inches='tight', dpi=900)
-
-    obs=model.formatObs(obs)
+    #
+    # plt.scatter(obs[:,2],obs[:,1], color="green", s=0.2)
+    # plt.savefig('sinSO.png', bbox_inches='tight',dpi=900)
+    #
+    # obs=superObbing.superObbing(obs)
+    #
+    # plt.scatter(obs[:,2],obs[:,1], color="blue",  s=0.4)
+    # plt.savefig('conSO.png', bbox_inches='tight', dpi=900)
+    #
+    # obs=model.formatObs(obs)
 
     return True, obs
 
